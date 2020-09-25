@@ -24,23 +24,27 @@ export const logout = () =>{
 
 export const createUser = (user)=>{
     return dispatch=>{
+        let flag = true
         dispatch(loadingUser())
-        axios.post(`${authBaseURL}/signupNewUser?key=${API_KEY}`,{
-            email: user.email,
+        // axios.post(`${authBaseURL}/signupNewUser?key=${API_KEY}`,{
+        axios.post("/accounts/",{
+            username: user.name,
             password: user.password,
-            returnSecureToken: true,
-        }).catch(err=>console.log(err)).then(res=>{
-            if(res.data.localId){
-                axios.put(`/users/${res.data.localId}.json`,{
-                    name: user.name,
-                }).catch(err=>{console.log(err)})
-                    .then(()=>{
-                        delete user.password
-                        dispatch(userLogged(user))
-                        dispatch(userLoaded())
-                    })
-            }
-        })
+            email: user.email,
+            // returnSecureToken: true,
+        }).catch(err=>{
+                console.log(err); 
+                flag=false; 
+                return flag
+            }).then(res=>{
+                if(flag){
+                    dispatch(userLogged(user))
+                    dispatch(userLoaded())
+                }
+                else{
+                    dispatch(logout())
+                }
+            })
     }
 }
 
@@ -58,23 +62,32 @@ export const userLoaded = () => {
 
 export const login = user => {
     return dispatch => {
+        console.log(user)
+        let flag = true
         dispatch(loadingUser())
-        axios.post(`${authBaseURL}/verifyPassword?key=${API_KEY}`, {
-            email: user.email,
+        // axios.post(`${authBaseURL}/verifyPassword?key=${API_KEY}`, {
+        axios.post("/usuario_login/", {
+            username: user.email,
             password: user.password,
-            returnSecureToken: true
+            // returnSecureToken: true
         })
-        .catch(err =>console.log(err))
+        .catch(err =>{
+            console.log(err)
+            flag = false
+        })
         .then(res => {
-            if (res.data.localId) {
-                axios.get(`/users/${res.data.localId}.json`)
-                .catch(err => console.log(err))
-                .then(res => {
-                    delete user.password
-                    user.name = res.data.name
-                    dispatch(userLogged(user))
-                    dispatch(userLoaded())
-                })
+            if(flag){
+                console.log("aaaaaaaaaaaaaaaaaaaaaaaaa")
+                console.log(res.data)
+                console.log("aaaaaaaaaaaaaaaaaaaaaaaaa")
+                user.name = user.email
+                user.id = res.data.id
+                console.log(user)
+                dispatch(userLogged(user))
+                dispatch(userLoaded())
+            }
+            else{
+                dispatch(logout())
             }
         })
     }

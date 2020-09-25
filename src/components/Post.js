@@ -55,7 +55,7 @@ class Post extends Component{
                                     })}}>
                                 <Image
                                     style={{width, height: 400}}
-                                    source={{uri: this.props.image}}
+                                    source={{uri: this.props.url_imagem}}
                                     resizeMode="contain"/>
                             </TouchableWithoutFeedback>
                             <Modal visible={isImageViewVisible} transparent={true}>
@@ -63,7 +63,7 @@ class Post extends Component{
                                     onDoubleClick={() => this.setState({isImageViewVisible: false})}
                                     imageUrls={[{
                                         props:{
-                                            source:{uri: this.props.image},
+                                            source:{uri: this.props.url_imagem},
                                         },
                                         width: width,
                                         height: ((width*16)/9),

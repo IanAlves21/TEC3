@@ -15,6 +15,7 @@
     "native-base": "^2.12.1",
     "prop-types": "^15.6.2",
     "react": "16.6.3",
+    "react-devtools": "^3.6.3",
     "react-native": "0.58.6",
     "react-native-gesture-handler": "^1.0.15",
     "react-native-gravatar": "^1.0.2",

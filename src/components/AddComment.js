@@ -21,6 +21,7 @@ class AddComment extends Component {
             postId: this.props.postId,
             comment:{
                 nickname: this.props.name,
+                user_id: this.props.user_id,
                 comment: this.state.comment
             }
         })
@@ -84,6 +85,7 @@ const styles = StyleSheet.create({
 const mapStateToProps = ({user, modo})=>{
     return{
         name: user.name,
+        user_id: user.user_id,
         escuro: modo.darkMode,
     }
 }

@@ -12,7 +12,7 @@ exports.uploadImage = functions.https.onRequest((request, response) => {
 //  response.send("Hello from Firebase!");
     cors(request, response, ()=>{
         try{
-            fs.writeFileSync('/tmp/imageToSave.jpg', request.body.image, 'base64')
+            fs.writeFileSync('/tmp/imageToSave.jpg', request.body.url_imagem, 'base64')
             const bucket = storage.bucket('codeshare-aecd6.appspot.com')
             const id = uuid()
             bucket.upload('/tmp/imageToSave.jpg',{

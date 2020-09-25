@@ -22,7 +22,7 @@ class Profile extends Component{
         return(
             <View style={[styles.container, {backgroundColor:  this.props.escuro ? 'rgba(30, 30, 30, 0.8)' : '#FFFFF0'}]}>
                 <Gravatar options={options} style={styles.avatar}/>
-                <Text style={[styles.nickname, {color:  this.props.escuro ? '#FFFFF0':'rgba(30, 30, 30, 0.8)'}]}>{this.props.name}</Text>
+                <Text style={[styles.nickname, {color:  this.props.escuro ? '#FFFFF0':'rgba(30, 30, 30, 0.8)'}]}>{this.props.username}</Text>
                 <Text style={[styles.email, {color:  this.props.escuro ? '#FFFFF0':'rgba(30, 30, 30, 0.8)'}]}>{this.props.email}</Text>
                 <View style={{alignItems: 'center'}}>
                     <Text>             </Text>

@@ -9,7 +9,7 @@ import axios from 'axios'
 // import App from './App';
 // import Feed from './src/screens/Feed'
 
-axios.defaults.baseURL = 'https://codeshare-aecd6.firebaseio.com/'
+axios.defaults.baseURL = "http://seaga.pythonanywhere.com/api"
 
 const store = storeConfig()
 const Redux = ()=>(

@@ -1,0 +1,13 @@
+{
+    "usuario": 3,
+    "url_imagem": {
+        "height": 600,
+        "width": 450,
+        "type": "image/jpeg",
+        "fileName": "image-cb0cd47d-9324-41b9-9ff6-7fbae4968035.jpg",
+        "fileSize": 124135,
+        "data": "/9j/4AAQ"
+    },
+    "titulo": "post.titulo", 
+    "enunciado": "post.enunciado"
+}

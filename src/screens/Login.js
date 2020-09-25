@@ -19,7 +19,7 @@ import Icone from 'react-native-vector-icons/Entypo'
 
 class Login extends Component{
     state={
-        name: 'Temporario',
+        name: '',
         email: '',
         password: '',
     }
@@ -39,7 +39,7 @@ class Login extends Component{
             <ScrollView>
                 <Container style={[styles.container, {backgroundColor: this.props.escuro ? 'rgba(30, 30, 30, 0.8)':'#FFFFF0'}]}>
                     <Item floatingLabel style={{marginTop: 5}}>
-                        <Label style={{color: this.props.escuro ? '#FFFFF0':'rgba(30, 30, 30, 0.8)', fontWeight: 'bold'}}>    {<Icone name='user' size={20} color={this.props.escuro ? '#FFFFF0':'rgba(30, 30, 30, 0.8)'}/>}  E-mail</Label>
+                        <Label style={{color: this.props.escuro ? '#FFFFF0':'rgba(30, 30, 30, 0.8)', fontWeight: 'bold'}}>    {<Icone name='user' size={20} color={this.props.escuro ? '#FFFFF0':'rgba(30, 30, 30, 0.8)'}/>}  Username</Label>
                         <Input style={{color: this.props.escuro ? '#FFFFF0':'rgba(30, 30, 30, 0.8)'}} keyboardType='email-address' 
                             autoFocus={true}  value={this.state.email} 
                             onChangeText={email=>this.setState({email})}/>
