@@ -46,7 +46,7 @@ class Register extends Component{
                             onChangeText={name=>this.setState({name})}/>
                     </Item>
                     <Item floatingLabel style={{marginTop: 5}}>
-                        <Label style={{color: this.props.escuro ? '#FFFFF0':'rgba(30, 30, 30, 0.8)', fontWeight: 'bold'}}>    {<Icone name='user' size={20} color={this.props.escuro ? '#FFFFF0':'rgba(30, 30, 30, 0.8)'}/>}  Username</Label>
+                        <Label style={{color: this.props.escuro ? '#FFFFF0':'rgba(30, 30, 30, 0.8)', fontWeight: 'bold'}}>    {<Icone name='user' size={20} color={this.props.escuro ? '#FFFFF0':'rgba(30, 30, 30, 0.8)'}/>}  E-mail</Label>
                         <Input style={{color: this.props.escuro ? '#FFFFF0':'rgba(30, 30, 30, 0.8)'}} keyboardType='email-address' 
                             value={this.state.email} onChangeText={email=>this.setState({email})}/>
                     </Item>

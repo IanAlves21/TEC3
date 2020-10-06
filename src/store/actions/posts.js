@@ -70,8 +70,8 @@ export const addPost = post =>{
                 return flag
             }).then(res=>{
                 if(flag){
-                    // dispatch(userLogged(user))
-                    // dispatch(userLoaded())
+                    dispatch(fetchPosts())
+                    dispatch(postCreated())
                 }
                 else{
                     // dispatch(logout())
